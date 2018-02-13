@@ -1,0 +1,8 @@
+package elementObjs;
+
+public class ElementUnit {
+	private int atomicNumber;
+	private int valenceShell;
+	
+	
+}

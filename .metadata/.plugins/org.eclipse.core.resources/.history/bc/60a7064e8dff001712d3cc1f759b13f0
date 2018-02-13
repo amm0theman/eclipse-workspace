@@ -1,0 +1,89 @@
+package headfirst.designpatterns.decorator.starbuzz;
+
+import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
+
+class coolTest {
+
+	@ParameterizedTest(name = "{index}=> milk = {0}, mocha = {1} soy = {2}, whip = {3}, tCost = {4}, type = {5}")
+	@CsvSource({
+		"0,0,0,0,.99,0",
+		"0,0,0,1,1.09,0",
+		"0,0,1,0,1.14,0",
+		"0,0,1,1,1.24,0",
+		"99,99,99,99,55.44,0"
+	})
+	void test(int milk, int mocha, int soy, int whip, double tCost, int type) {
+		
+		Beverage beverage1 = new DarkRoast();
+		
+		for(int i = 0; i < milk; i++)
+		{
+			beverage1 = new Milk(beverage1);
+		}
+		
+		for(int i = 0; i < mocha; i++)
+		{
+			beverage1 = new Mocha(beverage1);
+		}
+		
+		for(int i = 0; i < soy; i++)
+		{
+			beverage1 = new Soy(beverage1);
+		}
+		
+		for(int i = 0; i < whip; i++)
+		{
+			beverage1 = new Whip(beverage1);
+		}
+		assertEquals(tCost, beverage1.cost(), .002);
+	}
+
+	@ParameterizedTest(name = "{index}=> milk = {0}, mocha = {1} soy = {2}, whip = {3}, tCost = {4}, type = {5}")
+	@CsvSource({
+		"0,0,0,0,.99,0",
+		"0,0,0,1,1.09,0",
+		"0,0,1,0,1.14,0",
+		"0,0,1,1,1.29,0",
+		"99,99,99,99,55.44,0",
+		"0,1,0,0,2.19,2",
+		"0,0,0,0,0.89,1",
+		"99,99,99,99,55.34,1",
+		"0,0,0,0,1.05,3",
+		"99,99,99,99,55.50,3",
+	})
+	void test1(int milk, int mocha, int soy, int whip, double tCost, int type) {
+		Beverage beverage1 = null;
+		
+		switch(type) {
+		case 0: beverage1 = new DarkRoast(); break;
+		case 1: beverage1 = new HouseBlend(); break;
+		case 2: beverage1 = new Espresso(); break;
+		case 3: beverage1 = new Decaf(); break;
+		}
+		
+		
+		for(int i = 0; i < milk; i++)
+		{
+			beverage1 = new Milk(beverage1);
+		}
+		
+		for(int i = 0; i < mocha; i++)
+		{
+			beverage1 = new Mocha(beverage1);
+		}
+		
+		for(int i = 0; i < soy; i++)
+		{
+			beverage1 = new Soy(beverage1);
+		}
+		
+		for(int i = 0; i < whip; i++)
+		{
+			beverage1 = new Whip(beverage1);
+		}
+		assertEquals(tCost, beverage1.cost(), .002);
+	}
+}
+

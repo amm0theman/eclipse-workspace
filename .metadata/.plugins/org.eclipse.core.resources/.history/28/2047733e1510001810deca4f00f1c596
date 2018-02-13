@@ -1,0 +1,13 @@
+package elementObjs;
+
+abstract public class ElementUnit {
+	private int atomicNumber;
+	private int valenceShell;
+	
+	public void copyElement(ElementUnit elementArray[]) {
+		ElementUnit sortedArray[] = elementArray;
+		sort(sortedArray, elementArray, elementArray.length, 0);
+	}
+	
+	abstract ElementUnit[] sort(ElementUnit[] a, ElementUnit[] b, int bLength, int startLocation);
+}

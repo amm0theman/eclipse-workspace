@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring accessors="true" comment="Delete element from project &apos;decoratorFactoryPizza&apos;&#x0D;&#x0A;- Original project: &apos;decoratorFactoryPizza&apos;&#x0D;&#x0A;- Original element: &apos;decoratorFactoryPizza/headfirst.designpatterns.factory.pizzaaf&apos;" description="Delete element" element1="/&lt;headfirst.designpatterns.factory.pizzaaf" element2="/&lt;headfirst.designpatterns.factory" element3="/&lt;headfirst.designpatterns" element4="/&lt;headfirst" elements="4" flags="589830" id="org.eclipse.jdt.ui.delete" resources="0" stamp="1516952816781" subPackages="false" version="1.0"/>
+</session>
